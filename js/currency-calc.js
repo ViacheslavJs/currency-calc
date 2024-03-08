@@ -175,7 +175,7 @@ function handleInput(event, input) {
   }
 
   //const tooltips = document.getElementsByClassName('pc-form__tooltip-text'); // old
-  const tooltips = document.querySelectorAll('.pc-form__tooltip-text'); // ES6+
+  const tooltips = document.querySelectorAll('.form__tooltip-text'); // ES6+
   for (let i = 0; i < inputsArray.length; i++) {
     const inputValue = Number(inputsArray[i].value);
     if (isNaN(inputValue)) {
@@ -201,7 +201,7 @@ function deactiveBtnCalc() {
 
 
 // Получение <select>:
-const selectElement = document.getElementById('banned');
+const selectElement = document.getElementById('select');
 
 selectElement.addEventListener('change', () => {
     
@@ -212,11 +212,15 @@ selectElement.addEventListener('change', () => {
   // Получение значения атрибута "value" выбранной опции
   const unit = selectedOption.value; 
   console.log(unit); 
-  const params = inputsArray.map(param => Number(param.value)); //console.log(currency.rate);
+  const params = inputsArray.map(param => Number(param.value)); 
+  //console.log(currency.rate);
   const rate = Number(currency[0].rate);   
-  /*
+ 
+  
+  // Currency calculation:
   if (unit === 'USD') {
-    let result = calc(...params, unit, rate) / rate;   console.log(result, rate); 
+    let result = calc(...params, unit, rate) / rate;   
+    console.log(result, rate); 
     resultDisplayControl.innerHTML = 
     new Intl.NumberFormat('ru-RU', {
       style: 'currency',
@@ -224,7 +228,8 @@ selectElement.addEventListener('change', () => {
       currencyDisplay: 'narrowSymbol',
     }).format(result.toFixed(2));
   } else if (unit === 'UAH') {
-    let result = calc(...params, unit, rate);   console.log(result, rate); 
+    let result = calc(...params, unit, rate);   
+    console.log(result, rate); 
     resultDisplayControl.innerHTML = 
     new Intl.NumberFormat('ru-RU', {
       style: 'currency',
@@ -232,13 +237,13 @@ selectElement.addEventListener('change', () => {
       currencyDisplay: 'narrowSymbol',
     }).format(result.toFixed(2));
   }
-  */
+  
 
 });
 
 
 function calcBtnHandler() {
-  const selectElement = document.getElementById('banned');
+  const selectElement = document.getElementById('select');
  
   const selectedOption = selectElement.options[selectElement.selectedIndex];
     
@@ -246,7 +251,8 @@ function calcBtnHandler() {
   //const unit = 'UAH'; 
   console.log(unit);
 
-  const params = inputsArray.map(param => Number(param.value)); //console.log(currency.rate);
+  const params = inputsArray.map(param => Number(param.value)); 
+  //console.log(currency.rate);
   const rate = Number(currency[0].rate); 
   console.log(rate);
   const result = calc(...params, unit, rate);

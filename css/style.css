@@ -41,7 +41,7 @@ li {
 
 
 /***** TODO - module post-calc *********************/
-.post-calc {             
+.calc {             
   position: relative;   
   background: #f6f6f8;      
   /*background-image: url('../img/solar-panel.jpg');*/ 
@@ -55,12 +55,12 @@ li {
 }
 
 @media screen and (min-width: 951px) { 
-  .post-calc {
+  .calc {
     background-position: 100% 0%;
   }
 }
   
-.post-calc::after { 
+.calc::after { 
   display: none; /* TODO */
   content: "";
   position: absolute; 
@@ -72,7 +72,7 @@ li {
   /*background: rgba(256, 256, 256, 0.2);*/  
 }
    
-.post-calc__content {          
+.calc__content {          
   display: flex;  
   flex-direction: column;       
   justify-content: center;         
@@ -82,102 +82,13 @@ li {
 }
 
 @media screen and (min-width: 784px) {
-  .post-calc__content {
+  .calc__content {
     align-items: flex-end;    
   }       
 }
 
-.pc-price { 
-  display: none;
-  position: absolute; 
-  right: 0;
-  top: 0;
-  width: 100%;
-  padding: 10px;
-  z-index: 20;
-  font-family: sans-serif;
-  font-size: 16px;  
-  color: gray;
-  background: #f6f6f8;
-  border-radius: 5px;  
-}
-
-@media screen and (min-width: 645px) {
-  .pc-price {
-    width: 75%;
-  }
-}
-
-.pc-price__standard-cost {
-  padding: 10px 0;
-  border-radius: 5px;
-}
-
-.pc-price__standarts {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 10px;
-  padding: 5px 0;
-  border-bottom: 1px dotted gray; 
-}
-
-.pc-price__properties {
-  margin-top: 10px;
-}
-
-.pc-price__title {
-  text-align: center;
-}
-
-.pc-price__properties--value_cost {
-  color: #5cace5;
-}
-
-.pc-price__properties--value {
-  margin-top: 10px;
-  color: red;
-}
-
-.pc-form__price-icon {
-  position: absolute;
-  top: -35px;
-  right: 0;
-  padding: 0;
-  font-size: 2em;  
-  color: #ffffff;  
-  cursor: pointer;   
-}
-
-.price-down {
- animation: price-down forwards;     
-}
-
-.price-up {
- animation: price-up forwards;     
-}
-
-@keyframes price-down {
-  /*0% {opacity: 0;}
-  100% {opacity: 1;}/**/
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-  0% {transform: translateY(-50%);}
-  100% {transform: translateX(0);}/**/
-}
-
-@keyframes price-up {
-  /*0% {opacity: 1;}
-  100% {opacity: 0;}*/
-  0% {opacity: 1;}
-  100% {opacity: 0.7;}
-  100% {transform: translateY(-120%);}
-  0% {transform: translateX(0);}/**/
-}
-
-
    
-.pc-form {       
+.form {       
   position: relative;                  
   max-width: 100%;     
   margin-top: 50px;
@@ -185,15 +96,15 @@ li {
   font-size: 16px;                                          
 }
 
-.pc-form * {
+.form * {
   outline: none;  
 }
 
-.pc-form__body {
+.form__body {
   margin-top: 25px;             
 }
 
-.pc-form__info {                      
+.form__info {                      
   flex-grow: 1;
   flex-shrink: 1;    
   flex-basis: 0%;
@@ -204,7 +115,7 @@ li {
   font-size: 16px;       
 }
   
-.pc-form__title {  
+.form__title {  
   margin: 0;         
   padding: 5px 0;
   font-family: serif;       
@@ -217,12 +128,12 @@ li {
 }
 
 @media screen and (min-width: 645px) {
-  .pc-form__title {
+  .form__title {
     font-size: 1.8em;
   }
 }  
     
-.pc-form__text {    
+.form__text {    
   max-width: 100%;               
   margin: 0;
   padding: 5px 0; 
@@ -233,19 +144,19 @@ li {
   color: #fff;        
 }
 
-.pc-form__item {
+.form__item {
   position: relative;
   margin: 0 0 20px 0;
 }
 
-.pc-form__label {
+.form__label {
   display: block;
   margin: 0;
   font-size: 16px;
   color: gray;
 }
 
-.pc-form__input {
+.form__input {
   display: inline-block;
   max-width: 100%;
   height: 40px;
@@ -262,13 +173,13 @@ li {
 }
 
 @media screen and (min-width: 375px) {
-  .pc-form__input {
+  .form__input {
     font-size: 24px;
   }
 }
 
 @media screen and (min-width: 645px) {
-  .pc-form__input {
+  .form__input {
     font-size: 28px;
   }
 }
@@ -288,7 +199,7 @@ li {
   color: silver;
 }
     
-.pc-form__result {
+.form__result {
   display: inline-block; 
   max-width: 100%;
   height: 45px; 
@@ -304,18 +215,18 @@ li {
 }
   
 @media screen and (min-width: 375px) {
-  .pc-form__result {
+  .form__result {
     font-size: 2em;
   }
 }
   
 @media screen and (min-width: 645px) {
-  .pc-form__result {
+  .form__result {
     font-size: 2.5em;
   }
 }
 
-.pc-form__button {      
+.form__button {      
   display: inline-block;
   margin-bottom: 10px;
   width: 100px;
@@ -330,20 +241,20 @@ li {
   transition: all 0.2s ease 0s;       
 }
 
-.pc-form__button:hover {
+.form__button:hover {
   color: #99d3ff;
   border: 1px solid #99d3ff;
   cursor: pointer;
 }
 
 @media screen and (min-width: 375px) {
-  .pc-form__button {
+  .form__button {
     width: 120px;
     font-size: 1.3em;
   }
 }
 
-.pc-form__flex-alignment-out { 
+.form__flex-alignment-out { 
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
@@ -351,7 +262,7 @@ li {
   font-size: 16px;
 }
 
-.pc-form__flex-alignment-button {
+.form__flex-alignment-button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -368,7 +279,7 @@ li {
   outline: none;  
 }
 
-.pc-form__tooltip-text {
+.form__tooltip-text {
   visibility: hidden;
   position: absolute;
   bottom: 75px;
@@ -390,8 +301,8 @@ li {
   text-align: center;
 }
 
-.pc-form__tooltip-text:before,
-.pc-form__tooltip-text:after {
+.form__tooltip-text:before,
+.form__tooltip-text:after {
   content: "";
   position: absolute;
   z-index: 10;
@@ -405,7 +316,7 @@ li {
 }
 /***** tooltips *****/
 
-.pc-form__input:focus {
+.form__input:focus {
   border-bottom: 1px solid gray;
 }
 
